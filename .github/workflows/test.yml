@@ -58,8 +58,8 @@ jobs:
             
       - name: Set Environment Variables
         run: |
-          export SELENIUM_CHROME_BINARY=$PWD/chrome-linux64/chrome
-          export SELENIUM_CHROME_DRIVER=$PWD/chromedriver-linux64/chromedriver
+          export SELENIUM_CHROME_BINARY="$PWD/chrome-linux64/chrome"
+          export SELENIUM_CHROME_DRIVER="$PWD/chromedriver-linux64/chromedriver"
         working-directory: .
 
       - name: Install Selenium
