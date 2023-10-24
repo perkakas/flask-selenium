@@ -10,7 +10,7 @@ SELENIUM_CHROME_BINARY= os.getenv('SELENIUM_CHROME_BINARY')
 SELENIUM_CHROME_DRIVER= os.getenv('SELENIUM_CHROME_DRIVER')
 
 options = webdriver.ChromeOptions()
-options.binary_location = SELENIUM_CHROME_BINARY
+options.binary_location = "/home/runner/work/flask-selenium/flask-selenium/chrome-linux64/chrome-linux64/chrome"
 options.add_argument('--headless')
 service = Service(SELENIUM_CHROME_DRIVER)
 driver = webdriver.Chrome(service=service, options=options)
