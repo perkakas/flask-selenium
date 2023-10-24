@@ -29,7 +29,9 @@ jobs:
         working-directory: .
       
       - name: Wait for app to start
-        run: sleep 5
+        run: |
+          sleep 5
+          curl localhost:5000
 
   tests:
     needs: app
@@ -73,5 +75,7 @@ jobs:
 
       - name: Run Selenium Test
         run: |
+          sleep 5
+          curl localhost:5000
           python test.py
         working-directory: .
