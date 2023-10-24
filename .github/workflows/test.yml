@@ -25,8 +25,11 @@ jobs:
 
       - name: Start Flask app
         run: |
-          python app.py
+          python app.py &
         working-directory: .
+      
+      - name: Wait for app to start
+        run: sleep 5
 
   tests:
     needs: app
