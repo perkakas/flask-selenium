@@ -62,6 +62,8 @@ jobs:
           export SELENIUM_CHROME_DRIVER="$PWD/chromedriver-linux64/chromedriver-linux64/chromedriver"
           echo "SELENIUM_CHROME_BINARY: $SELENIUM_CHROME_BINARY"
           echo "SELENIUM_CHROME_DRIVER: $SELENIUM_CHROME_DRIVER"
+          ls -la $SELENIUM_CHROME_BINARY
+          ls -la $SELENIUM_CHROME_DRIVER
         working-directory: .
 
       - name: Install Selenium
