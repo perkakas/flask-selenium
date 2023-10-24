@@ -11,6 +11,7 @@ SELENIUM_CHROME_DRIVER= os.getenv('SELENIUM_CHROME_DRIVER')
 
 options = webdriver.ChromeOptions()
 options.binary_location = SELENIUM_CHROME_BINARY
+options.add_argument('--headless')
 service = Service(SELENIUM_CHROME_DRIVER)
 driver = webdriver.Chrome(service=service, options=options)
 

@@ -58,8 +58,8 @@ jobs:
             
       - name: Set Environment Variables
         run: |
-          export SELENIUM_CHROME_BINARY="$PWD/chrome-linux64/chrome"
-          export SELENIUM_CHROME_DRIVER="./chromedriver-linux64/chromedriver"
+          export SELENIUM_CHROME_BINARY="$PWD/chrome-linux64/chrome-linux64/chrome"
+          export SELENIUM_CHROME_DRIVER="$PWD/chromedriver-linux64/chromedriver-linux64/chromedriver"
           echo "SELENIUM_CHROME_BINARY: $SELENIUM_CHROME_BINARY"
           echo "SELENIUM_CHROME_DRIVER: $SELENIUM_CHROME_DRIVER"
         working-directory: .
