@@ -6,7 +6,7 @@ import time
 import os
 
 # Set the path to your web driver (e.g., chromedriver or geckodriver)
-SELENIUM_CHROME_BINARY= os.getenv('SELENIUM_CHROME_BINARY')
+SELENIUM_CHROME_BINARY= str(os.getenv('SELENIUM_CHROME_BINARY')) # Prevent TypeError: Binary Location Must be a String
 SELENIUM_CHROME_DRIVER= os.getenv('SELENIUM_CHROME_DRIVER')
 
 options = webdriver.ChromeOptions()

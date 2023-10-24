@@ -47,10 +47,8 @@ jobs:
             
       - name: Set Environment Variables
         run: |
-          export SELENIUM_CHROME_BINARY="/home/runner/work/flask-selenium/flask-selenium/chrome-linux64/chrome-linux64/chrome"
+          export SELENIUM_CHROME_BINARY="$PWD/chrome-linux64/chrome-linux64/chrome"
           export SELENIUM_CHROME_DRIVER="$PWD/chromedriver-linux64/chromedriver-linux64/chromedriver"
-          ls -la $SELENIUM_CHROME_BINARY
-          ls -la $SELENIUM_CHROME_DRIVER
         working-directory: .
 
       - name: Install Selenium
