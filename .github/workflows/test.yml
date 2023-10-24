@@ -6,8 +6,8 @@ on:
       - main  # Modify to match your default branch
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # You can choose a different runner if needed
+  app:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -16,22 +16,37 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x  # Use the version of Python you need
+          python-version: 3.x
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt  # Replace with the path to your requirements file
-        working-directory: .  # Replace with the actual path to your Flask app
+          pip install -r requirements.txt
+        working-directory: .
 
       - name: Start Flask app
         run: |
-          python app.py  # Replace with the command to start your Flask app
-        working-directory: .  # Replace with the actual path to your Flask app
+          python app.py
+        working-directory: .
 
-      - name: Wait for app to start
-        run: sleep 5  # Adjust as needed to give the app time to start
+  tests:
+    needs: app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install Selenium
+        run: |
+          pip install selenium
+        working-directory: .
 
       - name: Run Selenium Test
         run: |
-          python selenium_test.py  # Replace with the name of your Selenium test script
-        working-directory: .  # Replace with the actual path to your Flask app
+          python selenium_test.py
+        working-directory: .
