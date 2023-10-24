@@ -3,11 +3,15 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import time
+import os
 
 # Set the path to your web driver (e.g., chromedriver or geckodriver)
+SELENIUM_CHROME_BINARY= os.getenv('SELENIUM_CHROME_BINARY')
+SELENIUM_CHROME_DRIVER= os.getenv('SELENIUM_CHROME_DRIVER')
+
 options = webdriver.ChromeOptions()
-options.binary_location = "/Users/yusuf/Downloads/chrome-mac-x64/Chrome.app/Contents/MacOS/Google Chrome for Testing"
-service = Service("/Users/yusuf/Downloads/chromedriver-mac-x64/chromedriver")
+options.binary_location = SELENIUM_CHROME_BINARY
+service = Service(SELENIUM_CHROME_DRIVER)
 driver = webdriver.Chrome(service=service, options=options)
 
 # Open the Flask app in your local development server

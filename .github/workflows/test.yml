@@ -43,6 +43,24 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
+          
+      - name: Download and Extract Chrome
+        run: |
+          curl -LO https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/linux64/chrome-linux64.zip
+          unzip chrome-linux64.zip -d chrome-linux64
+        working-directory: .
+      
+      - name: Download and Extract ChromeDriver
+        run: |
+          curl -LO https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/linux64/chromedriver-linux64.zip
+          unzip chromedriver-linux64.zip -d chromedriver-linux64
+        working-directory: .
+            
+      - name: Set Environment Variables
+        run: |
+          export SELENIUM_CHROME_BINARY=$PWD/chrome-linux64/chrome
+          export SELENIUM_CHROME_DRIVER=$PWD/chromedriver-linux64/chromedriver
+        working-directory: .
 
       - name: Install Selenium
         run: |
