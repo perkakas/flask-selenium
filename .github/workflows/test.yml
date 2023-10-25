@@ -56,7 +56,7 @@ jobs:
 
       - name: Install Selenium
         run: |
-          pip install selenium
+          python -m pip install selenium
         working-directory: .
 
       - name: Run Selenium Test
