@@ -8,6 +8,8 @@ on:
 jobs:
   app:
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest
 
     steps:
       - name: Checkout code
