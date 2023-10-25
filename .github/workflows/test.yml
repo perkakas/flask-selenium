@@ -22,7 +22,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          apt update && apt install -y curl
+          python -m pip install -r requirements.txt
         working-directory: .
 
       - name: Start Flask app
