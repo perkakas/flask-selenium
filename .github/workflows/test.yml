@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apt update && apt install -y curl
+          apt update && apt install -y curl unzip
           python -m pip install -r requirements.txt
         working-directory: .
 
